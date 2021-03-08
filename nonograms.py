@@ -104,9 +104,9 @@ def solve_nonogram(nonogram):
 
     variables = []
 
-    for i in range(len(nonogram["rows"])):
+    for i in range(sizex):
         row = []
-        for j in range(len(nonogram["cols"])):
+        for j in range(sizey):
             variable = pe.exprvar("V" +str(i)+str(j))
             row.append(variable)
         variables.append(row)
@@ -131,7 +131,9 @@ def solve_nonogram(nonogram):
     full_eq = pe.And(*big_equation_list)
 
     answer = full_eq.satisfy_one()
-    return answer
+
+    result = {"cols": nonogram["cols"], "rows":nonogram["rows"], "solution": answer}
+    return result
 
     
 
