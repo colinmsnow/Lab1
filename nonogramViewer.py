@@ -50,6 +50,7 @@ sample_nonogram = {
     "solution": []
 }
 
+
 solved_nonogram = nonograms.solve_nonogram(sample_nonogram)
 print(solved_nonogram)
 print(view_nonogram(solved_nonogram))
